@@ -37,7 +37,7 @@ var myDrawer = Drawer(
         child: ListTile(
           leading: Icon(Icons.info),
           title: Text(
-            'A B O U T',
+            'A B O U Ts',
             style: drawerTextColor,
           ),
         ),
