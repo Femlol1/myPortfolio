@@ -35,16 +35,6 @@ var myDrawer = Drawer(
       Padding(
         padding: tilePadding,
         child: ListTile(
-          leading: Icon(Icons.settings),
-          title: Text(
-            'S E T T I N G S',
-            style: drawerTextColor,
-          ),
-        ),
-      ),
-      Padding(
-        padding: tilePadding,
-        child: ListTile(
           leading: Icon(Icons.info),
           title: Text(
             'A B O U T',
