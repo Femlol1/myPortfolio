@@ -37,7 +37,17 @@ var myDrawer = Drawer(
         child: ListTile(
           leading: Icon(Icons.info),
           title: Text(
-            'A B O U T AND WHY',
+            'A B O U T',
+            style: drawerTextColor,
+          ),
+        ),
+      ),
+      Padding(
+        padding: tilePadding,
+        child: ListTile(
+          leading: Icon(Icons.info),
+          title: Text(
+            'L A N G U A G E S',
             style: drawerTextColor,
           ),
         ),
