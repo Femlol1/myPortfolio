@@ -27,6 +27,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:webpage/widgets/about_me.dart';
 
 void main() {
   runApp(PortfolioApp());
@@ -37,6 +38,7 @@ class PortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Portfolio',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -49,36 +51,33 @@ class PortfolioHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Portfolio'),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: CircleAvatar(
                 radius: 80,
                 backgroundImage: AssetImage('assets/profile_picture.jpg'),
               ),
             ),
-            Text(
-              'Your Name',
+            const Text(
+              'Osifemi (Femi) Osibemekun',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
+            const Text(
               'Flutter Developer',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey,
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'About Me',
                 style: TextStyle(
@@ -87,20 +86,19 @@ class PortfolioHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
-                'Write a brief description about yourself and your skills. '
-                'You can mention your experience, education, and any notable projects you have worked on.',
+                'Hello, I\'m Osifemi (Femi) Osibemekun, a final-year software engineering student at the University of Leicester. I am passionate about mobile application development and creating user-friendly applications that enhance people\'s daily routines. With a focus on practicality and efficiency, I strive to deliver enjoyable experiences through my applications.',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Skills',
                 style: TextStyle(
@@ -109,19 +107,21 @@ class PortfolioHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Wrap(
+            const Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
-                Chip(label: Text('Flutter')),
+                Chip(label: Text('Java')),
+                Chip(label: Text('SQL')),
+                Chip(label: Text('Python')),
+                Chip(label: Text('JavaScript')),
+                Chip(label: Text('PHP')),
                 Chip(label: Text('Dart')),
-                Chip(label: Text('Firebase')),
-                // Add more skills here
               ],
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Projects',
                 style: TextStyle(
@@ -132,18 +132,99 @@ class PortfolioHomePage extends StatelessWidget {
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 3, // Replace with the actual number of projects
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 1, // Replace with the actual number of projects
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text('Project Title'),
-                  subtitle: Text('Project description'),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  title: const Text('Currency Recognition Mobile App'),
+                  subtitle: const Text(
+                      'Final-year project at the University of Leicester'),
+                  trailing: const Icon(Icons.arrow_forward_ios),
                   onTap: () {
                     // Navigate to the project details page
                   },
                 );
               },
+            ),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Employment',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Geta GetaDesk - Software Analyst'),
+              subtitle: const Text('July 2022 - August 2022'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title: const Text('Warehouse Demonstrator Service'),
+              subtitle: const Text('2021 - 2022'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title:
+                  const Text('The University of Leicester - Lead Peer Mentor'),
+              subtitle: const Text('2021 - 2022'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title: const Text(
+                  'Saint Francis Hospice Harold Hill Store - Charity Shop Assistant'),
+              subtitle: const Text('2019 - 2020'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title: const Text(
+                  'International Business Machines – IBM Ignite Scheme'),
+              subtitle: const Text('October 2019 - September 2019'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title: const Text(
+                  'Transport for London - TFL (IT Department) Work Placement'),
+              subtitle: const Text('April 2018 - May 2018'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Sports and Interests',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                Chip(
+                    label:
+                        Text('University of Leicester American Football Team')),
+                Chip(label: Text('Roller Skating')),
+                Chip(label: Text('Table Tennis')),
+                Chip(label: Text('Obstical courses '))
+              ],
             ),
           ],
         ),
