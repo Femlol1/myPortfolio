@@ -28,12 +28,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:webpage/widgets/about_me.dart';
+import 'package:webpage/config/animations.dart';
 
 void main() {
-  runApp(PortfolioApp());
+  runApp(const PortfolioApp());
 }
 
 class PortfolioApp extends StatelessWidget {
+  const PortfolioApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,12 +45,14 @@ class PortfolioApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PortfolioHomePage(),
+      home: const PortfolioHomePage(),
     );
   }
 }
 
 class PortfolioHomePage extends StatelessWidget {
+  const PortfolioHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,8 +67,7 @@ class PortfolioHomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const AboutMeWidget()),
+                  MaterialPageRoute(builder: (context) => const AboutMePage()),
                 );
                 // Navigate to about me section
               },
@@ -71,6 +75,11 @@ class PortfolioHomePage extends StatelessWidget {
             ListTile(
               title: const Text('Skills'),
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TransitionsHomePage()),
+                );
                 // Navigate to skills section
               },
             ),
@@ -274,4 +283,8 @@ class PortfolioHomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class _TransitionsHomePage {
+  const _TransitionsHomePage();
 }
