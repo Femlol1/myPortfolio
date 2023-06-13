@@ -51,6 +51,50 @@ class PortfolioHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('My Portfolio'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: const Text('About Me'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AboutMeWidget()),
+                );
+                // Navigate to about me section
+              },
+            ),
+            ListTile(
+              title: const Text('Skills'),
+              onTap: () {
+                // Navigate to skills section
+              },
+            ),
+            ListTile(
+              title: const Text('Projects'),
+              onTap: () {
+                // Navigate to projects section
+              },
+            ),
+            ListTile(
+              title: const Text('Employment'),
+              onTap: () {
+                // Navigate to employment section
+              },
+            ),
+            ListTile(
+              title: const Text('Sports and Interests'),
+              onTap: () {
+                // Navigate to sports and interests section
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -133,12 +177,11 @@ class PortfolioHomePage extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 1, // Replace with the actual number of projects
+              itemCount: 3,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: const Text('Currency Recognition Mobile App'),
-                  subtitle: const Text(
-                      'Final-year project at the University of Leicester'),
+                  title: const Text('Project Title'),
+                  subtitle: const Text('Project description'),
                   trailing: const Icon(Icons.arrow_forward_ios),
                   onTap: () {
                     // Navigate to the project details page
@@ -214,7 +257,7 @@ class PortfolioHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Wrap(
+            const Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
@@ -223,7 +266,7 @@ class PortfolioHomePage extends StatelessWidget {
                         Text('University of Leicester American Football Team')),
                 Chip(label: Text('Roller Skating')),
                 Chip(label: Text('Table Tennis')),
-                Chip(label: Text('Obstical courses '))
+                Chip(label: Text('Climbing')),
               ],
             ),
           ],
