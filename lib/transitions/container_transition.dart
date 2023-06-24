@@ -32,6 +32,17 @@ const String _loremIpsumParagraph =
     'amet commodo nulla. Pretium viverra suspendisse potenti nullam ac tortor '
     'vitae';
 
+const String _aboutMeParagraph =
+    '''Hello, I'm Osifemi (Femi) Osibemekun, a final-year software engineering student at the University of Leicester. I am passionate about mobile application development and creating user-friendly applications that enhance people's daily routines. With a focus on practicality and efficiency, I strive to deliver enjoyable experiences through my applications.
+Education has played a crucial role in shaping my skills. Pursuing a BSc in Software Engineering with an industrial year, I have gained a strong foundation in object-oriented programming, mobile applications, and AI. My final-year project involved developing a currency recognition mobile application, showcasing my ability to tackle real-world challenges.
+Throughout my academic journey, I have acquired proficiency in various programming languages such as Java, SQL, Python, JavaScript, PHP, and Dart. I am well-versed in development tools like Node.js, Eclipse, and GitHub, and I am experienced in working with operating systems such as Android, iOS, Windows, and Linux.
+In addition to my studies, I have gained practical experience through several employment opportunities. As a software analyst at Geta GetaDesk, I analyzed and improved a web platform built with Laravel, enhancing its functionality and user experience. Working as a warehouse demonstrator, I developed adaptability skills while interacting with customers and demonstrating a wide range of products.
+During my time as a lead peer mentor at the University of Leicester, I provided valuable support to fellow students, adapting my communication style to foster a professional yet approachable environment. My role as a charity shop assistant at Saint Francis Hospice Harold Hill Store strengthened my customer service skills and attention to detail.
+I have also had the privilege of participating in programs at renowned organizations. Through the IBM Ignite scheme, I completed badges and honed my presentation, communication, and problem-solving abilities. During a work placement at Transport for London's IT department, I contributed to website creation, virtual reality application development, and software testing.
+Beyond my professional endeavors, I have a passion for sports and hobbies. I have been an active member of the University of Leicester American football team and enjoy roller skating and table tennis in my free time.
+With a predicted 2:1 in my BSc Software Engineering degree, a diverse skill set, and a drive for mobile application development, I am eager to embark on a rewarding career in the field. References are available upon request.
+Thank you for taking the time to learn more about me. I look forward to connecting with you and exploring opportunities in the world of mobile application development.''';
+
 const double _fabDimension = 56.0;
 
 /// The demo page for [OpenContainerTransform].
@@ -124,13 +135,13 @@ class _OpenContainerTransformDemoState
       body: ListView(
         padding: const EdgeInsets.all(8.0),
         children: <Widget>[
-          _OpenContainerWrapper(
-            transitionType: _transitionType,
-            closedBuilder: (BuildContext _, VoidCallback openContainer) {
-              return _ExampleCard(openContainer: openContainer);
-            },
-            onClosed: _showMarkedAsDoneSnackbar,
-          ),
+          // _OpenContainerWrapper(
+          //   transitionType: _transitionType,
+          //   closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //     return _ExampleCard(openContainer: openContainer);
+          //   },
+          //   onClosed: _showMarkedAsDoneSnackbar,
+          // ),
           const SizedBox(height: 16.0),
           _OpenContainerWrapper(
             transitionType: _transitionType,
@@ -139,103 +150,103 @@ class _OpenContainerTransformDemoState
             },
             onClosed: _showMarkedAsDoneSnackbar,
           ),
-          const SizedBox(height: 16.0),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: _OpenContainerWrapper(
-                  transitionType: _transitionType,
-                  closedBuilder: (BuildContext _, VoidCallback openContainer) {
-                    return _SmallerCard(
-                      openContainer: openContainer,
-                      subtitle: 'Secondary text',
-                    );
-                  },
-                  onClosed: _showMarkedAsDoneSnackbar,
-                ),
-              ),
-              const SizedBox(width: 8.0),
-              Expanded(
-                child: _OpenContainerWrapper(
-                  transitionType: _transitionType,
-                  closedBuilder: (BuildContext _, VoidCallback openContainer) {
-                    return _SmallerCard(
-                      openContainer: openContainer,
-                      subtitle: 'Secondary text',
-                    );
-                  },
-                  onClosed: _showMarkedAsDoneSnackbar,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16.0),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: _OpenContainerWrapper(
-                  transitionType: _transitionType,
-                  closedBuilder: (BuildContext _, VoidCallback openContainer) {
-                    return _SmallerCard(
-                      openContainer: openContainer,
-                      subtitle: 'Secondary',
-                    );
-                  },
-                  onClosed: _showMarkedAsDoneSnackbar,
-                ),
-              ),
-              const SizedBox(width: 8.0),
-              Expanded(
-                child: _OpenContainerWrapper(
-                  transitionType: _transitionType,
-                  closedBuilder: (BuildContext _, VoidCallback openContainer) {
-                    return _SmallerCard(
-                      openContainer: openContainer,
-                      subtitle: 'Secondary',
-                    );
-                  },
-                  onClosed: _showMarkedAsDoneSnackbar,
-                ),
-              ),
-              const SizedBox(width: 8.0),
-              Expanded(
-                child: _OpenContainerWrapper(
-                  transitionType: _transitionType,
-                  closedBuilder: (BuildContext _, VoidCallback openContainer) {
-                    return _SmallerCard(
-                      openContainer: openContainer,
-                      subtitle: 'Secondary',
-                    );
-                  },
-                  onClosed: _showMarkedAsDoneSnackbar,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16.0),
-          ...List<Widget>.generate(10, (int index) {
-            return OpenContainer<bool>(
-              transitionType: _transitionType,
-              openBuilder: (BuildContext _, VoidCallback openContainer) {
-                return const _DetailsPage();
-              },
-              onClosed: _showMarkedAsDoneSnackbar,
-              tappable: false,
-              closedShape: const RoundedRectangleBorder(),
-              closedElevation: 0.0,
-              closedBuilder: (BuildContext _, VoidCallback openContainer) {
-                return ListTile(
-                  leading: Image.asset(
-                    'assets/avatar_logo.png',
-                    width: 40,
-                  ),
-                  onTap: openContainer,
-                  title: Text('List item ${index + 1}'),
-                  subtitle: const Text('Secondary text'),
-                );
-              },
-            );
-          }),
+          // const SizedBox(height: 16.0),
+          // Row(
+          //   children: <Widget>[
+          //     Expanded(
+          //       child: _OpenContainerWrapper(
+          //         transitionType: _transitionType,
+          //         closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //           return _SmallerCard(
+          //             openContainer: openContainer,
+          //             subtitle: 'Secondary text',
+          //           );
+          //         },
+          //         onClosed: _showMarkedAsDoneSnackbar,
+          //       ),
+          //     ),
+          //     const SizedBox(width: 8.0),
+          //     Expanded(
+          //       child: _OpenContainerWrapper(
+          //         transitionType: _transitionType,
+          //         closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //           return _SmallerCard(
+          //             openContainer: openContainer,
+          //             subtitle: 'Secondary text',
+          //           );
+          //         },
+          //         onClosed: _showMarkedAsDoneSnackbar,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // const SizedBox(height: 16.0),
+          // Row(
+          //   children: <Widget>[
+          //     Expanded(
+          //       child: _OpenContainerWrapper(
+          //         transitionType: _transitionType,
+          //         closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //           return _SmallerCard(
+          //             openContainer: openContainer,
+          //             subtitle: 'Secondary',
+          //           );
+          //         },
+          //         onClosed: _showMarkedAsDoneSnackbar,
+          //       ),
+          //     ),
+          //     const SizedBox(width: 8.0),
+          //     Expanded(
+          //       child: _OpenContainerWrapper(
+          //         transitionType: _transitionType,
+          //         closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //           return _SmallerCard(
+          //             openContainer: openContainer,
+          //             subtitle: 'Secondary',
+          //           );
+          //         },
+          //         onClosed: _showMarkedAsDoneSnackbar,
+          //       ),
+          //     ),
+          //     const SizedBox(width: 8.0),
+          //     Expanded(
+          //       child: _OpenContainerWrapper(
+          //         transitionType: _transitionType,
+          //         closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //           return _SmallerCard(
+          //             openContainer: openContainer,
+          //             subtitle: 'Secondary',
+          //           );
+          //         },
+          //         onClosed: _showMarkedAsDoneSnackbar,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // const SizedBox(height: 16.0),
+          // ...List<Widget>.generate(10, (int index) {
+          //   return OpenContainer<bool>(
+          //     transitionType: _transitionType,
+          //     openBuilder: (BuildContext _, VoidCallback openContainer) {
+          //       return const _DetailsPage();
+          //     },
+          //     onClosed: _showMarkedAsDoneSnackbar,
+          //     tappable: false,
+          //     closedShape: const RoundedRectangleBorder(),
+          //     closedElevation: 0.0,
+          //     closedBuilder: (BuildContext _, VoidCallback openContainer) {
+          //       return ListTile(
+          //         leading: Image.asset(
+          //           'assets/avatar_logo.png',
+          //           width: 40,
+          //         ),
+          //         onTap: openContainer,
+          //         title: Text('List item ${index + 1}'),
+          //         subtitle: const Text('Secondary text'),
+          //       );
+          //     },
+          //   );
+          // }),
         ],
       ),
       floatingActionButton: OpenContainer(
@@ -514,7 +525,7 @@ class _DetailsPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  _loremIpsumParagraph,
+                  _aboutMeParagraph,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Colors.black54,
                         height: 1.5,

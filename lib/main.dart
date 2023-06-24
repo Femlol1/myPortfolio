@@ -27,6 +27,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:webpage/transitions/container_transition.dart';
 import 'package:webpage/widgets/about_me.dart';
 import 'package:webpage/config/animations.dart';
 
@@ -50,6 +51,25 @@ class PortfolioApp extends StatelessWidget {
   }
 }
 
+const String _aboutMeParagraph =
+    '''Hello, I'm Osifemi (Femi) Osibemekun, a final-year software engineering student at the University of Leicester. I am passionate about mobile application development and creating user-friendly applications that enhance people's daily routines. With a focus on practicality and efficiency, I strive to deliver enjoyable experiences through my applications.
+
+Education has played a crucial role in shaping my skills. Pursuing a BSc in Software Engineering with an industrial year, I have gained a strong foundation in object-oriented programming, mobile applications, and AI. My final-year project involved developing a currency recognition mobile application, showcasing my ability to tackle real-world challenges.
+
+Throughout my academic journey, I have acquired proficiency in various programming languages such as Java, SQL, Python, JavaScript, PHP, and Dart. I am well-versed in development tools like Node.js, Eclipse, and GitHub, and I am experienced in working with operating systems such as Android, iOS, Windows, and Linux.
+
+In addition to my studies, I have gained practical experience through several employment opportunities. As a software analyst at Geta GetaDesk, I analyzed and improved a web platform built with Laravel, enhancing its functionality and user experience. Working as a warehouse demonstrator, I developed adaptability skills while interacting with customers and demonstrating a wide range of products.
+
+During my time as a lead peer mentor at the University of Leicester, I provided valuable support to fellow students, adapting my communication style to foster a professional yet approachable environment. My role as a charity shop assistant at Saint Francis Hospice Harold Hill Store strengthened my customer service skills and attention to detail.
+
+I have also had the privilege of participating in programs at renowned organizations. Through the IBM Ignite scheme, I completed badges and honed my presentation, communication, and problem-solving abilities. During a work placement at Transport for London's IT department, I contributed to website creation, virtual reality application development, and software testing.
+
+Beyond my professional endeavors, I have a passion for sports and hobbies. I have been an active member of the University of Leicester American football team and enjoy roller skating and table tennis in my free time.
+
+With a predicted 2:1 in my BSc Software Engineering degree, a diverse skill set, and a drive for mobile application development, I am eager to embark on a rewarding career in the field. References are available upon request.
+
+Thank you for taking the time to learn more about me. I look forward to connecting with you and exploring opportunities in the world of mobile application development.''';
+
 class PortfolioHomePage extends StatelessWidget {
   const PortfolioHomePage({super.key});
 
@@ -67,7 +87,8 @@ class PortfolioHomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const AboutMePage()),
+                  MaterialPageRoute(
+                      builder: (context) => const OpenContainerTransformDemo()),
                 );
                 // Navigate to about me section
               },
@@ -285,6 +306,47 @@ class PortfolioHomePage extends StatelessWidget {
   }
 }
 
-class _TransitionsHomePage {
-  const _TransitionsHomePage();
+class PortfolioSectionPage extends StatelessWidget {
+  final String section;
+
+  const PortfolioSectionPage({required this.section, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(section),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Add your content for each section here
+            if (section == 'About Me') ...[
+              const Text('About Me Section'),
+              // Add about me content
+            ],
+            if (section == 'Skills') ...[
+              const Text('Skills Section'),
+              // Add skills content
+            ],
+            if (section == 'Projects') ...[
+              const Text('Projects Section'),
+              // Add projects content
+            ],
+            if (section == 'Employment') ...[
+              const Text('Employment Section'),
+              // Add employment content
+            ],
+            if (section == 'Sports and Interests') ...[
+              const Text('Sports and Interests Section'),
+              // Add sports and interests content
+            ],
+          ],
+        ),
+      ),
+    );
+  }
 }
