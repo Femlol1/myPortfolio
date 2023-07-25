@@ -1,34 +1,6 @@
-// import 'package:flutter/material.dart';
-// import 'package:webpage/responsive/desktop_body.dart';
-// import 'package:webpage/responsive/mobile_body.dart';
-// import 'package:webpage/responsive/responsive_layout.dart';
-// import 'package:webpage/responsive/tablet_body.dart';
-
-// void main() {
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Osifemi Osibemekun',
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(primarySwatch: Colors.green),
-//       home: ResponsiveLayout(
-//         mobileBody: const MobileScaffold(),
-//         tabletBody: const TabletScaffold(),
-//         desktopBody: const DesktopScaffold(),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:webpage/transitions/container_transition.dart';
-import 'package:webpage/widgets/about_me.dart';
+
 import 'package:webpage/config/animations.dart';
 
 void main() {
@@ -143,7 +115,7 @@ class PortfolioHomePage extends StatelessWidget {
               ),
             ),
             const Text(
-              'Flutter Developer',
+              'Software Developer',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey,
@@ -163,7 +135,7 @@ class PortfolioHomePage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
-                'Hello, I\'m Osifemi (Femi) Osibemekun, a final-year software engineering student at the University of Leicester. I am passionate about mobile application development and creating user-friendly applications that enhance people\'s daily routines. With a focus on practicality and efficiency, I strive to deliver enjoyable experiences through my applications.',
+                'Hello, I\'m Osifemi (Femi) Osibemekun, a computer science masters student at the University of Leicester. I am passionate about mobile and web application development. With a focus on practicality and efficiency, I strive to deliver enjoyable experiences through my applications.',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
@@ -189,7 +161,6 @@ class PortfolioHomePage extends StatelessWidget {
                 Chip(label: Text('SQL')),
                 Chip(label: Text('Python')),
                 Chip(label: Text('JavaScript')),
-                Chip(label: Text('PHP')),
                 Chip(label: Text('Dart')),
               ],
             ),
@@ -204,19 +175,28 @@ class PortfolioHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: const Text('Project Title'),
-                  subtitle: const Text('Project description'),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  onTap: () {
-                    // Navigate to the project details page
-                  },
-                );
+            ListTile(
+              title: const Text('Currency Guru'),
+              subtitle: const Text(
+                  'A currencty detector mobile app for the visually impaired 😎'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title: const Text('Finance calculator'),
+              subtitle: const Text(
+                  'App allows user to calculate the tax they need to pay 💲'),
+              onTap: () {
+                // Navigate to employment details page
+              },
+            ),
+            ListTile(
+              title: const Text('Currency Guru'),
+              subtitle: const Text(
+                  'A currencty detector mpbile app for the visually impaired'),
+              onTap: () {
+                // Navigate to employment details page
               },
             ),
             const SizedBox(height: 16),

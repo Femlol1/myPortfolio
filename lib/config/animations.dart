@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:webpage/transitions/container_transition.dart';
-import 'package:webpage/transitions/fade_scale_transition.dart';
 import 'package:webpage/transitions/fade_through_transition.dart';
-import 'package:webpage/transitions/shared_axis_transition.dart';
 
 class TransitionsHomePage extends StatefulWidget {
   const TransitionsHomePage({super.key});
@@ -38,19 +36,6 @@ class _TransitionsHomePageState extends State<TransitionsHomePage> {
                   },
                 ),
                 _TransitionListTile(
-                  title: 'Shared axis',
-                  subtitle: 'SharedAxisTransition',
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) {
-                          return const SharedAxisTransitionDemo();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                _TransitionListTile(
                   title: 'Fade through',
                   subtitle: 'FadeThroughTransition',
                   onTap: () {
@@ -58,19 +43,6 @@ class _TransitionsHomePageState extends State<TransitionsHomePage> {
                       MaterialPageRoute<void>(
                         builder: (BuildContext context) {
                           return const FadeThroughTransitionDemo();
-                        },
-                      ),
-                    );
-                  },
-                ),
-                _TransitionListTile(
-                  title: 'Fade',
-                  subtitle: 'FadeScaleTransition',
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) {
-                          return const FadeScaleTransitionDemo();
                         },
                       ),
                     );
